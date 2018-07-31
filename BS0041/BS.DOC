@@ -1,0 +1,552 @@
+Contents:
+
+Intro
+Instalation
+  BBS
+  Personal
+  The BS.CFG
+BS Scripts <New! Funfilled!!! Probably buggier than my school's
+     cafeteria!>
+Disclaimer
+Help!
+Registration <NAAAOOOOOooO!!!>
+Frequently Asked Questions <FAQ>
+
+    *Introduction:
+BarneySplat!
+By ASCII Express
+- Bong Software!!!
+
+Free! well... near free anyways (see the end) DISPARE NOT!
+
+What is it?
+Read the instructions!
+But since I'm nice here's a summary:
+Users get to Kill Barney (Yes, the purple Dino!), Baby Bop, and four of
+Barney's Kidee Friends!
+It's a ton of laughs and since mostly EVERYONE hates Barney, it should
+be kinda popular!
+
+WATCH FOR VERSION .004 soon!
+
+A SERIOUS NOTE:
+My friend runs a board. My friend's board receives calls JUST TO PLAY
+IT! So please put it up and spread it around!  It can even be run
+without a BBS! So please see the section if applicable.
+
+Copyrights? I'M WAITING FOR YOUR LETTER! PBS! Just think before you
+act.. you'd lose more money trying to take me to court.. but one line of
+code reinacts the imfamous Censorship routines. If you have no clue as
+to what I am talking about, worry not.
+
+*Now for the installation:
+
+**BBS
+What you need to know is what drop file you want to use. If you aren't
+sure here's a little chart..
+
+RemoteAccess: Dorinfo1.def or Door.sys
+VBBS: Either chain.txt, door.sys, or dorinfo1.def
+WWIV: chain.txt
+Wildcat: door.sys or callinfo.bbs I believe
+Telegard/Renegarbage/T.A.G.: either chain.txt, door.sys, or dorinfo1.def
+JetBBS!!!!!!: Door.sys, dorinfo1.def, or chain.txt
+
+I think...
+
+Just check your BBS manual if you aren't sure still..
+
+Now, after you know that just setup the door using the commandline
+parameters.  BTW THIS IS Taken Directly from the BOI Document by Andrew
+J. Mead, so you KNOW it's right! <GRIN>
+
+        command   dropfile      BBS software - Notes
+         /1       PCBOARD.SYS   PCBoard 12.x (see /P)
+         /2       JUMBER.DAT    2 A.M.
+         /3                     OPUS 1.13 (not available)
+         /4       CHAIN.TXT     WWIV, VBBS, TAG, Telegard
+         /5       CURRUSER.BBS  RyBBS
+         /6       SFDOORS.DAT   Spitfire BBS
+         /7       AUNTIE.SYS    Auntie BBS (same format as /1)
+         /8                     Sapphire BBS (not available)
+         /9       command line  Searchlight, Remote Access, Simplex
+         /D       DOOR.SYS      DoorWay to Unlimited Doors, GT
+                                NOTE:This is the "Short" Door.Sys see /S
+         /F       USERINFO.TXT  Forum
+         /G       CALLINFO.BBS  Genesis (beta)
+         /H       INFO.TXT      Phoenix
+         /M       NUMBER.TXT    ModuleX
+         /O       LASTUSER.DAT  Opus 1.14
+         /Oxx     LASTUSxx.DAT  Opus 1.14 where "xx" is the task number
+                                in hexadecimal
+         /P       PCBOARD.SYS   PCBoard 14.x (see /1)
+         /S       DOOR.SYS      GAP, Force
+                                NOTE: This is the "Long" Door.Sys see /D
+         /W       CALLINFO.BBS  WildCat!, Telegard
+
+         /R       DOORINFO.DEF  DorInfo is the most widely used file.
+         /R#      DORINFO#.DEF  EIS-PC, FoReM, OLEcom, QuickBBS, RBBS,
+                                Remote Access, TAG, TPBoard, UBBS, and
+                                VBBS. the "#" represents the node number
+
+        If this command is missing, the door will default to local mode.
+
+        Drop File Path
+            If (as recommended) you do not run your online doors from
+            your BBS directory, you need to tell the BOI where to find
+            the drop file.  You can either copy the file, or add the
+            drop file's path to the command line.  Here's an example
+            with WildCat! assuming the BBS is in c:\wcat.
+
+          doorgame /w:c:\wcat\
+
+            Note: the "\" on the end of the path is required, and that
+            the first ":" (w:c) is optional (for clarity).
+
+Ok, now this is me again...  Just set it up like
+
+@echo off
+cd <the directory your Fuhrer game is>
+fuhrer.exe <commandline stuff>
+cd\bbs <-- or whereever your BBS is
+exit
+@echo on
+
+I am writing an install program, maybe for the next version!
+
+**Personal
+Nothing is needed (not even a Drop file!).. Just type BS and off you go.
+
+Note: set it up if you are having a party. Put it in a looping batch
+file. Encourage friendly competition. Ads a lot of fun!
+
+<<<IMPORTANT>>>
+In either case, create a BS.CFG file.  The .cfg file is two lines...
+They are either a Y or an N. Make sure the Y or N is on the first
+character of the line.  The first line should be a Y or an N based on
+wether if you want the game to keep track of the player's time.  If Y,
+when the player's time on the BBS runs out, it will kick them out. If N,
+they have unlimited time within the game..
+The second line is a Y or an N, based on wether they can only play once
+per day or not. If y, they can only play once per day, if n they can
+play as many times as they want.
+
+*BS Scripts
+This is a new feature to barneysplat...  The basic thing behind a BS
+script started when a user wrote me some email, asking how "new scenes"
+were added...  He had an old version, you see, but then it hit me Let's
+bring his little fantasy to life... so I wipped up a simple scripting
+(mini programming) language, for the purpose of writing BS events.  Even
+if you can't program, almost failed "Truebasic" class, or think
+batchfiles are hard, as long as you play the game a bit, you will be
+able to make your own BarneySplat! scenes in no time.  that was a very
+long sentence...  Anyway, before I go into it, a little about the game,
+so you won't mess anything up.
+<<<ALERT!>>> PLEASE READ ALL OF THIS PART BEFORE EVEN ATTEMPTING TO
+WRITE SCRIPTS! THE SYNTAX CHECKING IS VIRTUALLY NONEXISTANT! IT WILL
+FUCK UP IF YOU DO NOT READ THIS DOC AND DO WHAT IT SAYS! REVIEW IT WITH
+A MICROSCOPE IF YOU HAVE TO! Or put a copy over your bed, and read it as
+you are going night-night, and have happy barneysplatting scripting
+dreams (what a nerd!)>>>
+A barneysplat script must have the extention .bs, whatever.bs,
+shrooms.bs whatever. shrooms.bs is a good example that I wrote.
+The first two lines of the script are the title of the scene, and the
+author's name (handle, whatever).
+The third line of a script is the prompt for the menu...  Be creative,
+whatever...
+The game is devided into five days (monday-friday, duh!), and three
+turns in each day, for 15 turns (5 days*3 turns).  The first two values
+in the script file (lines 4-5) MUST be the day number to allow this event
+(1-5, 0 if it doesn't matter), and the second line must be the turn
+number of the day (0=don't care, 1=after the random event, 2=after the field
+trip, 3=right before the day ends.)
+
+After this comes the percent of the event comming up, 1-100.
+Next comes the opening info...  Print anything cool that relates to the
+scene, like "Barney says Let's do so and so..." etc.  You can write
+however much you want. Terminate with a . on a blank line for example
+Barney says "Let's learn to molest Children I'm good at it!!!"
+"um..." a kid cires
+.
+
+Next come all the command letters for the menu... Put them all next to
+each other AND DO NOT DUPLICATE! THINGS WILL FUCK UP!  I AM SERIOUS!
+IMPORTANT! Make sure that the last command letter is the choice to quit
+the fun...
+
+For example
+ABCDEFGQ
+Now, comes the menu which will be printed. One choice for a line.
+Something like the following including the previously mentioned command
+letters is what will work.
+ABCDEFGQ
+(A)rest someone
+(B)omb someone
+(C)hoak someone
+(D)rug someone
+(E)xecute someone
+(F)uck up someone
+(G)ive someone a free tatoo on their butt
+(Q)uit the fun
+
+see? No . is needed for this.
+Okay, now you have to start each choice with
+Choice c
+where c is the command letter like
+Choice A
+
+Auright....  Now, comes the opening of that event... End with a . just
+like the opening text of the whole scene...
+Next, comes the random bungle.  This is
+what chance the event has of happening. There are three commands here,
+you can use one, two, or...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ALL THREEEEEEeeeeeeeeeeeeeee! HOW THE HELL DID YOU NOT SEE THAT
+COMMING?!  Anyway, they are
+RANDOM <chance> <max>
+Generates a random number from 1 to <max>, and if it is less than, or
+equal to <chance>, then the event will happen for example
+Random 1 500
+means that there is a 1 in 500 chance of happening...
+Ha.hahahahahahahaha.aha.ahaha.ahh.ahah.aha.haah.ahah.ah.aha!
+
+Percent <percent>
+Self explanitory
+Percent 20
+means there is a twenty percent chance of happening
+
+Userpercent
+lets the user input a percent, and uses that number they entered of
+happening.
+
+Okay, I lied, there are actually four
+Score <points>
+Will continue if the player has that number of points or over
+
+Terminate this whole thing with a .
+like
+percent 20
+.
+
+radness...
+Okay, now the meat of the script...
+So we have two things that can happen now either success or failed.
+So start with either Success or Failed on a line on itself... everything
+between this line and a . will be executed. Then put the other...  and
+end that with a dot too like
+Success
+<code>
+.
+Failed
+<code>
+.
+You see? It's really quite simple SHUT UP! STOP THINKING ABOUT HOW
+COMPLEX IT IS! SHUT UP! sorry, highschool does this to a man's sanity...
+okay, here are the commands, an unlimited ammount are okay...
+
+Print <string>
+um what do you think? Sends the string to the ink printer, and if the
+printer happens to be on, causes a short circuit, thus setting the
+entire paper bin ablaze, along with anything within a fifty yard
+radius...
+Actually, it mearly prints the text to the user.
+
+NL
+Sends a blank line (null)...
+
+Log <string>
+heheuhuhuhuh he said "log"...  You know that funky player log at the end
+of the game that Barney recites to the kids? This lets you put an entry
+into it for the end. There are a maximum of twenty entries for the whole
+game, so don't go nuts with this.. (nuts? log? Sick.)
+
+Killoff <player>
+Kills off the player in <player>, <player> can be
+Barney, Bop, Kid1, kid2, kid3, kid4, or rkid (random kid). Figure the
+others out.
+
+Score <points>
+Envites <points> ammount of nekked hookers over to your house so you can
+score with them. um waitasec, no, actually it adds (or subtracts)
+<points> to the score. If the points gets below -100 they Die!
+
+Screwup <player> <points>
+Gets <player> more drunk. Points are whatever, once they hit 100 they
+die in a bloody mess...  Use this carefully, obviously. SOmething like
+80-90 would almost certainly kill off the player unless in the beginning
+of the day. <player> is
+Barney
+Bop
+Kid1
+kid2
+kid3
+kid4
+Allkids (Woo! Woo!)
+Everyone (WOOOOOOOoooooooooo!)
+
+Okay, that is all the commands... not too bad... It's really not that
+complex. NOW LET'S SEE WHAT WE HAVE LEARNED!... Here is the skeleton of
+the code. I could make a joke about skeletons comming out of the closet,
+and the sexual connotations, but I will not.
+
+Title
+Author
+menu prompt
+day number or 0 for event
+day turn or 0 for event
+percent of this event happening
+opening info
+.
+command letters for menu
+The meniu, one choice per line
+(do this next bit until the end)
+Choice <letter>
+Info for the choice
+can be as many lines as ya want
+.
+Chances of happening
+.
+Success (or failed)
+code
+.
+The opposite of the above (failed or success)
+code
+.
+<end of loop, repeat for all choices>
+
+Now see? Was that hard? No. it wasn't.  That last item with the summary
+like that is like the Cliffnotes, and as any highschool student will
+tell you, cliffnotes beat reading the real book 99% of the time! THEY
+RULE! Whoever came up with them is a genius and a considered friend... I
+heard there are cliffnotes on CDROM? Is this true? that would Rule...
+Okay, that's it for scripting. I can't stress enough, Upload all scripts
+if you can to my BBS and I will include all scripts I get into the next
+version... THis is gunna rule if enough people get scripting!
+
+*Disclaimer:
+I won't be liable for Peanuts (ddi you know you can get a little high by
+smoking Peanut shells?)!  I hearby say Bye bye blue sky to all
+liabilities of this game.  If you use it, it's your risk.  I don't need
+a lawsuit now, I never have and never will want or need one.  If you are
+a lawyer, isn't this unprofessional? YEAH? Good. I like it this way.
+really? Yes. Hey, Ever talk to yourself?  Yeah, all the time...  Well,
+anyway, if this causes a user to flip out because they are a nazi, and
+invite Adolph, Schlemging, and Auschwitz over to your house and if they
+do various things to your brain, spinal chord, body, arms, legs, feet,
+and money, Don't blame me...
+
+
+*Help!
+Need help? Either call my BBS, call me voice I'll give my number at the
+end, or ask a fellow SysOp. They'll normally be glad to help you out.
+
+That's about it... Enjoy the game!
+
+If you want to contact me here's how.
+
+Through my BBs, I Forget 610-544-8001
+Call me!!!! 610-544-2331
+Internet asciiexp@delphi.com
+COmpuserve 72760,3572
+Genie: A.Seraphin
+Snail-mail me, 301 College Ave. Swarthmore, PA 19081
+
+Do them in that order of listing, and cost <Grin>!
+
+Welps, that's about it. Enjoy the game.
+
+
+... will you ever to learn docs?  Yes. Now what would your English
+teacher say? I'm getting to that.....
+
+About the Author:
+I'm 17.  I'm about 1.8 meters high, and about 40 KG...
+If you are an American as I am and think that metric sucks and the "Imperial" system conquers all, you are just wrong.
+But for those who do, that's about 5'7, 95 pounds...
+I think. Someone who thinks in metric let me know how accurate I am.
+I've been running a BBS off and on for the last three years. a
+little over.
+
+My favorite groups are RUsh, Pink Floyd, The Orb, Kraftwerk, any fast techno,
+Information society (is it true the lead singer's a hacker (BAD WORD!))?
+ any others Genesis Weird AL Yankivick, etc. hello!!
+
+
+
+Dedications:
+THe following people gave me ideas:
+Reverend Warthog: Came up with the name!
+Innocent Man: GOT YOUR Handle right this time!
+Sibyl, You're a straightedged fool, but we still like you anyway.  A
+note to any females reading this (yeah right): DO NOT EVER, EVER, EVER
+DUMP YOUR BOYFRIEND, OR SAY ANYTHING THAT WILL LEAD TO SUCH ACTIONS, ("I
+will not talk to you until you get off the drugs", for instance)
+IF HE IS UNDER THE INFLUENCE OF ANY POWERFULL MIND ALTERANTS (cough).
+HE WILL FREAK OUT AND HAVE THE MOST HELLISH TEN MINUTES OF HIS LIFE,
+GARENTEED.... not that I'd know or anything... dammit, I wish I were in
+Holland.
+Cerebus and Zenman: For being truly hoopy friends.. and Cerebus for
+smoking up even if it *WAS* banana peals. "Do you see... the man?" also
+you guys gave me great ideas.
+Righteous: for more demented ideas
+Cat woman and for that matter all the other sysops in Montana: for
+telling me about the time problem, and the once per day option..
+The countless people who submitted ideas! You are are cool, even if i
+never implemented your idea.  And by the way, when submitting, Please
+don't ask "Did you submit my idea?" I get a few ideas a week, and
+quickly (within five minutes) lose track of who said what.
+Barney: I would say go to hell, but that is to good for you. May the
+Jihad have their fun.
+Andrew J. Mead for writing this door interface which is great and
+lovable hoopy and other stuff.
+Gregory P. Smith: For writing Pavatar! If you programmers want to add
+avatar, and ansi/avatar music, THIS IS THE WAY! Every time you hear an
+ansi music sound, think of this guy's name!
+Douglass Adams for providing the word "Hoopy"
+
+You, for running this game!
+
+
+Good bye, good luck, and good fun!
+
+Se vi povas kompreni xci tion, vi estas bonulo!
+
+*Registration
+I am allways inventing new bonuses for registration, so this is not the
+only Way!  So call if you are interested in free registration (HA ha ha
+ha ha ha ha ha ha!)  Anyway, if you want to register right now, just
+send me whatever you think this game is worth!  Of course, some
+conceiled pipe tobacco would be much appriciated too! IF YOU PICK THIS
+ROUTE, PLEASE CONCEIL IT VERY WELL! parents, you know.  Also, do not
+openly say "Here is some Pipe tobacco!" my mom likes reading my mail
+sometimes.arg. and let me know first.
+Another alternative (prefered) is to, after checking with me, send me a copy
+of a tape of any trance/techno/electronic/newage music... if I do not have
+it, send a copy along and you will get a registration...  Oh wait a
+minute, copying tapes is illegal.
+"Please don't arrest me. I ain't doin
+nothin illegal man! I'm not...."
+"Shut up, son, and let's see the tapes."
+"What tapes? I don't know what you're talking about."
+"Don't make us beat the fuck out of you with this here club, boy, show
+us the fucking tapes, godammit..."
+etc. sorry, had to be said.
+You will receive a key..
+DO NOT GIVE THIS OUT! or you will be beaten with an aluminium baseball
+bat.
+
+ -’SCII
+
+    *Frequently Asked Questions <FAQ>
+Here are frequently asked questions. Before giving up or before calling
+me why not read this.
+
+Q. When I run BarneySplat!, I get weird looking symbols like [36;40m and
+stuff.
+A. You've gotta load Ansi.sys. TO do this, put a line in config.sys that
+reads
+DEVICE=C:\dos\ansi.sys
+or wherever your ansi.sys is.
+
+Q. BS works fine locally but doesn't work remotely.
+A. Probably you've got the wrong Door.sys Use /S, I've never seen /D
+used...  If it's something else and you figure it out let me know and I
+will try to help you out in this case.
+
+Q. It allways says Cannot find dropfile or something like that.
+A. You've gotta configure the dropfile correctly. See up above for an
+explanation.
+Q. I want to call ASCII Express but I'm not sure what time it is in
+Pensylvania.
+A. DOn't worry! Give me a call anyway! I'm in eastern time... but if I
+am assleep/don't feel like talking to people I will just turn off my
+phone... Give me a call. we can talk... I have made a number of friends
+through BS--it's quite cool, really...
+
+Q. I think this game is horrible because it says stuff about drugs and
+other horrible things.
+A> Delete this program, then, and forget about it.
+
+Q. I think this FAQ is going too long and is too pointless.
+A. Agreed. Bye, all!
+
+-’SCII
+PS School sucks. Just thought I'd you know... say that... TRIGONOMETRY
+AND PHYSICS ARE THE TWO MOST GOD DAMN POINTLESS CLASSES I HAVE EVER
+TAKEN IN MY LIFE!... just had to... uh say that.
+
+And now, some rad BarneySPlat! quotes.
+"It's so neat that you're getting money in the mail!!!" - My Mom
+"uhh... um. hm. heheh.uhh." - Me sometimes
+"Why isn't your bbs up?" - a lot of people.
+"I cannot get through to you man! your phone is allways off." - Even
+more people.
+"I'll make you some ansi or rip." - Some people who should really
+consider running for office... <grin>
+"I've been a thief since I was two." - My friend Anonymous Caller.
+"If you can eat a shroom, and have nothing bad happen to you, you can
+put a battery on your tongue." - My friend Angie.
+"Get to bed..Now.." - My Mom
+"Potpotpotpotpotpotpotpotpotpotpotpotptotpotpotpotoptpotoptoptoptpotoptpotpotoptoptpotpotpotpot"
+- Cypress Hill's basic theme
+
+I think that's enough. Bye, for real...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+I LIED! HELLO AGAIN! FOR REAL!
+HAHAHAHAHahahahahahahahahahAHAHahahahahahAHAHAHAHAhahahahaHAahhaha!
+um...
+Hey guess what? The water main in front of our school broke and they let
+us out. that was rad. Snow and ice, how fun... how fun...
+snow falls down, through the trees, blanketing the ground and street
+with it's white beauty, like a blanket of freedom, liberating people
+from their forced duties.  Forcing everyone to jUST COOL OUT FOR A FEW
+DAYS!
+I LOVE SNOW!
+ice isn't bad either.
+excewpt when i have to shovel or pick the ice.
+

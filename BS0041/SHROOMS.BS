@@ -1,0 +1,50 @@
+Shroom Farmin'
+ASCII Express
+Select?
+1
+1
+100
+You and the group take a trip to your magic mushroom farm!
+Of course they don't know this.
+.
+GSL
+(G)ive everyone some of your "product"
+(S)ee which shrooms are poisoness the fun way
+(L)eave the "farm"
+Choice G
+You make a nice little feast, of course with your shrooms as an integral
+ingredient...
+.
+percent 50
+.
+Success
+print Oh man! They chow down.
+print Then they start shaking around!
+print HEHehahahahahahahahaha!
+score 100
+screwup everyone 20
+.
+Failed
+print Barney asks you just what are in the food!
+print He tells everyone and you can't eat the food.
+print bloody dino.
+.
+Choice S
+One important job of a shroom farmer is to tell which shrooms
+are poisoness and which are real shrooms.
+A kiddee would be the ideal target you think.
+.
+percent 20
+.
+success
+print "AAaagggrrrhghlllglglhh!" They die!
+killoff rkid
+print "good one man"
+score 500
+.
+failed
+print "Oh no they all look bad to me! those aren't mushrooms like"
+print Mommy makes!"
+print mushrooms are my friend
+.
+

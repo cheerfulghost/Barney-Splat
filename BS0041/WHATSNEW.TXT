@@ -1,0 +1,6 @@
+NOt much is new.  .004 was buggy as hell. .0041 is a bugfix and adds
+since .0035 a new event (tapes), if barney dies you can take over, and
+the biggy, SCRIPTING LAnguage!  Now you too can write barneysplat!
+sequences?  Now just settle down and read the docs...
+I promise you will have a fun time.
+
